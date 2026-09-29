@@ -1,0 +1,19 @@
+# personal data never gets committed — seed scripts stay local
+scripts/seed.local/
+seed.local/
+*.local.js
+
+# secrets
+.env
+.env.*
+.dev.vars
+
+# cloudflare
+.wrangler/
+
+# deps
+node_modules/
+
+# logs + os junk
+*.log
+.DS_Store
