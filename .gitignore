@@ -17,3 +17,25 @@ node_modules/
 # logs + os junk
 *.log
 .DS_Store
+
+# keys, certs, local databases — never in a public repo
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+
+# build output + test artifacts (screenshots may show real data)
+dist/
+build/
+test-results/
+playwright-report/
+
+# editor + backup junk
+.vscode/
+.idea/
+*.bak
+*.orig
+*~

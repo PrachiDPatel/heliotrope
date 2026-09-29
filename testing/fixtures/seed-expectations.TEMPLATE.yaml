@@ -1,0 +1,51 @@
+# Heliotrope — seed expectations fixture (TEMPLATE)
+
+# Copy to seed-expectations.local.yaml and fill from her stated facts.
+# The .local file is gitignored and NEVER committed.
+# Placeholders only in this template.
+
+meds:
+  - name: "<med name>"
+    dose: "<number + unit>"
+    status: "<current|incoming|has_but_not_taking|confirm_status>"
+    schedule: "<plain-language schedule>"
+    prescriber: "<doctor ref>"
+    refill_phone: "<dialable number>"
+    flags:
+      - "<prescriber warning, e.g. interaction note>"
+
+doctors:
+  - name: "<doctor name>"
+    role: "<PCP|psychiatrist|therapist|...>"
+    status: "<current|seeking_new|to_find>"
+    phone: "<dialable number>"
+
+labs:
+  - panel: "<panel name>"
+    collected: "<YYYY-MM-DD>"
+    performed_by: "<lab>"
+    ordered_by: "<doctor ref>"
+    rows:
+      - analyte: "<name>"
+        value: "<number>"
+        unit: "<unit>"
+        range_low: "<number>"
+        range_high: "<number>"
+        flag: "<none|LOW|HIGH>"
+
+insurance:
+  payer: "<payer>"
+  plan: "<plan name>"
+  member_id: "<id>"
+  group: "<group>"
+
+todos:
+  - title: "<todo>"
+    priority: "<high|medium|low>"
+    category: "<find_doctor|...>"
+    note: "<rich text>"
+
+body_issues:
+  - system: "<body system>"
+    issue: "<issue>"
+    notes: "<notes>"

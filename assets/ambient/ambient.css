@@ -1,0 +1,70 @@
+/* Heliotrope ambient art snippets — tertiary palette only.
+   Motifs: sun-through-leaves, faint rainbow, fireflies, Pleiades.
+   Usage: layer 1-2 motifs per surface, never all four at once. */
+
+:root {
+  --hl-deep: #041322;      /* dark blue base */
+  --hl-prussian: #0a2c47;
+  --hl-cerulean: #2ea3c8;
+  --hl-ultramarine: #3b2fc4;
+  --hl-phthalo-green: #14532d;
+  --hl-emerald: #2f9e63;
+  --hl-deepred: #a93a26;
+  --hl-shimmer: #bfe3f2;
+}
+
+/* Sun through leaves — section hero backgrounds. Pair with fireflies. */
+.amb-sunleaves {
+  background:
+    url("sun-through-leaves.svg") center top / cover no-repeat,
+    linear-gradient(180deg, var(--hl-prussian), var(--hl-deep));
+  color: #eaf4fa;
+}
+
+/* Faint rainbow — one gentle accent band behind a card or heading. */
+.amb-rainbow {
+  background: url("rainbow-arc.svg") center 20% / 120% no-repeat;
+}
+
+/* Fireflies — absolutely-positioned drifting layer over a dark surface.
+   <div class="amb-fireflies">…</div> then sprinkle .firefly dots. */
+.amb-fireflies { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.firefly {
+  position: absolute; width: 5px; height: 5px; border-radius: 50%;
+  background: #F0C77E;
+  box-shadow: 0 0 12px 3px rgba(217, 164, 65, 0.35);
+  animation: firefly-drift 7s ease-in-out infinite alternate,
+             firefly-pulse 3.2s ease-in-out infinite;
+}
+@keyframes firefly-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(14px, -22px); }
+}
+@keyframes firefly-pulse {
+  0%, 100% { opacity: 0.9; } 50% { opacity: 0.25; }
+}
+
+/* Pleiades — corner ornament on dark cards (top-right reads best). */
+.amb-pleiades {
+  background: url("pleiades.svg") top right / 120px no-repeat;
+}
+
+/* Gentle shimmer sweep for headings over dark blue. */
+.amb-shimmer {
+  background: linear-gradient(100deg, var(--hl-shimmer) 20%, #ffffff 40%, var(--hl-shimmer) 60%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer-sweep 6s linear infinite;
+}
+@keyframes shimmer-sweep {
+  from { background-position: 120% 0; } to { background-position: -120% 0; }
+}
+
+/* Stained-glass translucency for cards over ambient art. */
+.amb-glass {
+  background: rgba(10, 44, 71, 0.55);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid rgba(191, 227, 242, 0.16);
+  border-radius: 18px;
+}

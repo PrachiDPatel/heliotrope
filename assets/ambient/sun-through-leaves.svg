@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 260">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0d1c30"/><stop offset="45%" stop-color="#0a2036"/><stop offset="100%" stop-color="#041322"/></linearGradient>
+<radialGradient id="sun" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#F0C77E"/><stop offset="35%" stop-color="#D9A441" stop-opacity="0.85"/><stop offset="100%" stop-color="#D9A441" stop-opacity="0"/></radialGradient>
+<radialGradient id="leafshade" cx="50%" cy="0%" r="90%">
+<stop offset="0%" stop-color="#123324"/><stop offset="100%" stop-color="#0a1f16"/></radialGradient>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<rect width="390" height="260" fill="url(#bg)"/>
+<!-- low ember-gold sun, dimmed -->
+<circle cx="195" cy="42" r="95" fill="url(#sun)" opacity="0.55"/>
+<circle cx="195" cy="42" r="30" fill="#D9A441" opacity="0.9"/>
+<circle cx="195" cy="42" r="30" fill="url(#sun)" opacity="0.8"/>
+<!-- thin dappled beams -->
+<g fill="#F0C77E" filter="url(#soft)">
+<polygon points="178,60 186,60 150,260 128,260" opacity="0.10"/>
+<polygon points="200,62 206,62 200,260 184,260" opacity="0.07"/>
+<polygon points="222,58 229,61 268,260 248,260" opacity="0.09"/>
+<polygon points="160,58 166,61 110,230 94,226" opacity="0.08"/>
+<polygon points="240,62 245,66 300,220 286,214" opacity="0.07"/>
+</g>
+<!-- leaf canopy: dark translucent, backlit ember rims -->
+<g>
+<path d="M -20,30 C 40,-6 120,-12 190,18 C 120,34 40,44 -20,30 Z" fill="url(#leafshade)" opacity="0.92" stroke="#D9A441" stroke-width="2" stroke-opacity="0.4"/>
+<path d="M 150,6 C 230,-14 320,-8 400,22 C 330,36 230,38 150,6 Z" fill="url(#leafshade)" opacity="0.9" stroke="#D9A441" stroke-width="2" stroke-opacity="0.45"/>
+<path d="M 60,44 C 130,26 220,28 290,52 C 220,66 130,64 60,44 Z" fill="url(#leafshade)" opacity="0.85" stroke="#F0C77E" stroke-width="1.6" stroke-opacity="0.35"/>
+<path d="M 300,40 C 350,28 400,30 430,44 C 390,54 340,52 300,40 Z" fill="url(#leafshade)" opacity="0.88" stroke="#D9A441" stroke-width="1.6" stroke-opacity="0.35"/>
+</g>
+<!-- faint drifting motes in the light -->
+<g fill="#F0C77E">
+<circle cx="150" cy="120" r="1.6" opacity="0.35"/><circle cx="230" cy="150" r="1.3" opacity="0.3"/>
+<circle cx="190" cy="190" r="1.8" opacity="0.28"/><circle cx="260" cy="110" r="1.2" opacity="0.32"/>
+</g>
+</svg>

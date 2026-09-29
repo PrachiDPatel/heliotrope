@@ -1,0 +1,25 @@
+# Heliotrope worker — wrangler config
+# Local dev: npx wrangler dev   (secrets via worker/.dev.vars, never committed)
+
+name = "heliotrope"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# ---- local dev bindings ----
+# wrangler dev creates ephemeral local D1/R2 by default; use
+#   npx wrangler d1 create heliotrope-db
+# and paste the real database_id into the [[d1_databases]] block below
+# before first deploy. See docs/local-dev.md.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "heliotrope-db"
+database_id = "00000000-0000-0000-0000-000000000000" # TODO: replace after `wrangler d1 create heliotrope-db`
+
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "heliotrope-photos" # TODO: create via `wrangler r2 bucket create heliotrope-photos`
+
+[vars]
+APP_ENV = "local"
+COOKIE_NAME = "heliotrope_session"
